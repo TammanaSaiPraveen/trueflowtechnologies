@@ -1,16 +1,64 @@
-# React + Vite
+# Trueflow Technologies - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend application for Trueflow Technologies.
 
-Currently, two official plugins are available:
+## Environment Variables
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application uses environment variables for API configuration. Create a `.env` file in the root directory:
 
-## React Compiler
+```env
+# Development API URL (local backend)
+VITE_API_URL=http://localhost:5000/api
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### For Production Deployment
 
-## Expanding the ESLint configuration
+When deploying to production, update the `VITE_API_URL` in your deployment platform's environment variables:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Option 1: Same Domain (Recommended)**
+If your frontend and backend are on the same domain:
+```env
+VITE_API_URL=/api
+```
+
+**Option 2: Different Domain**
+If your backend is on a different domain:
+```env
+VITE_API_URL=https://api.yourdomain.com/api
+```
+
+### Setting Environment Variables
+
+**Vercel:**
+- Go to Project Settings → Environment Variables
+- Add `VITE_API_URL` with your production API URL
+
+**Netlify:**
+- Go to Site Settings → Environment Variables
+- Add `VITE_API_URL` with your production API URL
+
+**Other Platforms:**
+- Set `VITE_API_URL` as an environment variable before building
+- The variable will be embedded at build time
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+The build output will be in the `dist` folder.
+
+## Notes
+
+- Environment variables prefixed with `VITE_` are exposed to the client-side code
+- The API URL is determined dynamically based on the environment
+- In development, it defaults to `http://localhost:5000/api`
+- In production without `VITE_API_URL`, it uses `/api` (relative URL)
