@@ -14,13 +14,13 @@ const Team = () => {
       expertise: ["AI & Machine Learning", "Full-Stack Development", "Business Strategy", "Team Leadership"],
       initials: "TS"
     },
-    // {
-    //   name: "Vadlamudi Sri Rama Karthik",
-    //   role: "Co-Founder",
-    //   bio: "Co-founder driving strategic growth and innovation. Committed to delivering exceptional technology solutions.",
-    //   expertise: ["Strategic Planning", "Business Development", "Technology Innovation", "Partnership Management"],
-    //   initials: "VK"
-    // },
+    {
+      name: "Vadlamudi Sri Rama Karthik",
+      role: "Co-Founder",
+      bio: "Co-founder driving strategic growth and innovation. Committed to delivering exceptional technology solutions.",
+      expertise: ["Strategic Planning", "Business Development", "Technology Innovation", "Partnership Management"],
+      initials: "VK"
+    },
     {
       name: "Atyam Aravind",
       role: "CTO",
